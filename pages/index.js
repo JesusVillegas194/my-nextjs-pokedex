@@ -4,12 +4,31 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Pokemon from "../components/Pokemon";
 import PokemonList from "../components/PokemonList";
+import MyPagination from "../components/MyPagination";
 
 const defaultEndPoint = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=12";
+const getOffset = (page) => page * 12 - 12;
 
 export default function Home({ data }) {
-  const { next, previous, results: defaultResults = [] } = data;
+  const { results: defaultResults = [] } = data;
   const [results, setResults] = useState(defaultResults);
+  const [page, setPage] = useState(1);
+
+  const handlePageChange = async (event, value) => {
+    setPage(value);
+
+    try {
+      const url = `https://pokeapi.co/api/v2/pokemon?offset=${getOffset(
+        value
+      )}&limit=12`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      setResults(data.results);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <div>
@@ -17,10 +36,13 @@ export default function Home({ data }) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>Pokédex | By Jesus Villegas</title>
       </Head>
+
       <Header />
+
       <Container>
+        <MyPagination onChange={handlePageChange} />
         <Box
-          xs={{
+          sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

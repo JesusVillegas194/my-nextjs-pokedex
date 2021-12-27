@@ -32,7 +32,7 @@ function Pokemon({ url }) {
     getPokemonData();
   }, []);
 
-  return (
+  return id < 899 ? (
     <Box
       component={Link}
       href="#"
@@ -91,7 +91,7 @@ function Pokemon({ url }) {
         ))}
       </Box>
     </Box>
-  );
+  ) : null;
 }
 
 export default Pokemon;
