@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Pokédex
 
-## Getting Started
+Nothing is more useful than a Pokédex when you begin your journey to become a Pokémon Master. This Pokédex will help you identify and learn more about each Pokémon.
 
-First, run the development server:
+## Link
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Go see the Pokédex in action [here](https://my-nextjs-pokedex.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- List of Pokémon that show the name of each Pokémon
+- A picture for identification
+- View specific information of each individual Pokémon
+- A pagination component
+- Responsive design
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Screenshots
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Desktop View
 
-## Learn More
+<img src="./public/screenshots/desktop-view.webp" height="400" />
 
-To learn more about Next.js, take a look at the following resources:
+### Mobile View
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img src="./public/screenshots/mobile-view.webp" height="400" />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Built with
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/)
+- [MUI](https://mui.com/)
+- [PokéApi](https://pokeapi.co/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Run locally
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone this repo
+2. Run `npm install`
+3. Run `npm run dev`
+4. Open the application in `https://localhost:3000/` or any other available port
+
+## To Do
+
+- [ ] Return to Home button
+- [ ] Evolution chains
+- [ ] Filter Pokémon based on Generation and Type
+- [ ] Search Pokémon by its Name/ID
+- [ ] Scroll to top for mobile
