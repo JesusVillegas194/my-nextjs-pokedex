@@ -39,7 +39,7 @@ Go see the Pokédex in action [here](https://my-nextjs-pokedex.vercel.app/)
 
 ## To Do
 
-- [ ] Return to Home button
+- [x] Return to Home button
 - [ ] Evolution chains
 - [ ] Filter Pokémon based on Generation and Type
 - [ ] Search Pokémon by its Name/ID
