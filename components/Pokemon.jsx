@@ -35,7 +35,7 @@ function Pokemon({ url }) {
   return id < 899 ? (
     <Box
       component={Link}
-      href="#"
+      href={`/pokemon/${name}`}
       underline="none"
       sx={{
         display: "flex",

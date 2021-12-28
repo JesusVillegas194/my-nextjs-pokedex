@@ -1,7 +1,6 @@
 import { Container, Typography, Box, Grid } from "@mui/material";
 import { useState } from "react";
 import Head from "next/head";
-import Header from "../components/Header";
 import Pokemon from "../components/Pokemon";
 import PokemonList from "../components/PokemonList";
 import MyPagination from "../components/MyPagination";
@@ -36,8 +35,6 @@ export default function Home({ data }) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>Pokédex | By Jesus Villegas</title>
       </Head>
-
-      <Header />
 
       <Container>
         <MyPagination onChange={handlePageChange} />
