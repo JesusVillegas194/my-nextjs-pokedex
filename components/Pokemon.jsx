@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "../src/Link";
 import { BG_COLORS, TITLE_COLORS, TYPE_COLORS } from "../src/colors";
 
-function Pokemon({ url }) {
+function Pokemon({ url, limit }) {
   const [id, setId] = useState("");
   const [image, setImage] = useState(
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
@@ -32,7 +32,7 @@ function Pokemon({ url }) {
     getPokemonData();
   }, []);
 
-  return id < 899 ? (
+  return id > limit ? null : (
     <Box
       component={Link}
       href={`/pokemon/${name}`}
@@ -91,7 +91,7 @@ function Pokemon({ url }) {
         ))}
       </Box>
     </Box>
-  ) : null;
+  );
 }
 
 export default Pokemon;

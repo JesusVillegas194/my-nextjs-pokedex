@@ -1,6 +1,6 @@
 import { Box, Pagination, Stack } from "@mui/material";
 
-function MyPagination({ onChange }) {
+function MyPagination({ onChange, page, generation }) {
   return (
     <Box
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
@@ -8,12 +8,13 @@ function MyPagination({ onChange }) {
     >
       <Stack>
         <Pagination
-          count={75}
+          count={generation[0].pages}
           showFirstButton
           showLastButton
           size="small"
           color="error"
           onChange={onChange}
+          page={page}
         />
       </Stack>
     </Box>
