@@ -20,29 +20,29 @@ function PokemonStats({ stats, types }) {
   };
 
   const StatsRow = () => {
-    return stats.map((item, i) => (
+    return stats.map((stat, i) => (
       <Fragment key={i}>
         <Grid item xs={3} sm={2}>
           <Typography style={{ textTransform: "capitalize" }}>
-            {item.stat.name === "special-attack"
+            {stat.stat.name === "special-attack"
               ? "Sp-Atk"
-              : item.stat.name === "special-defense"
+              : stat.stat.name === "special-defense"
               ? "sp-Def"
-              : item.stat.name}
+              : stat.stat.name}
           </Typography>
         </Grid>
         <Grid item xs={2} sm={1}>
-          <Typography align="right">{item.base_stat}</Typography>
+          <Typography align="right">{stat.base_stat}</Typography>
         </Grid>
         <Grid item xs={6} sm={8}>
           <Slider
-            value={item.base_stat}
+            value={stat.base_stat}
             min={0}
             step={1}
             max={
-              item.stat.name === "hp"
-                ? getMaxHP(item.base_stat)
-                : getMaxStat(item.base_stat)
+              stat.stat.name === "hp"
+                ? getMaxHP(stat.base_stat)
+                : getMaxStat(stat.base_stat)
             }
             disabled
             style={{ color: TITLE_COLORS[types[0]] }}
@@ -50,9 +50,9 @@ function PokemonStats({ stats, types }) {
         </Grid>
         <Grid item xs={1}>
           <Typography align="right">
-            {item.stat.name === "hp"
-              ? getMaxHP(item.base_stat)
-              : getMaxStat(item.base_stat)}
+            {stat.stat.name === "hp"
+              ? getMaxHP(stat.base_stat)
+              : getMaxStat(stat.base_stat)}
           </Typography>
         </Grid>
       </Fragment>
