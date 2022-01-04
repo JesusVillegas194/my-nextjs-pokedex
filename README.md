@@ -41,6 +41,7 @@ Go see the Pokédex in action [here](https://my-nextjs-pokedex.vercel.app/)
 
 - [x] Return to Home button
 - [ ] Evolution chains
-- [ ] Filter Pokémon based on Generation and Type
+- [x] Filter Pokémon based on Generation
+- [ ] Filter Pokémon based on Type
 - [ ] Search Pokémon by its Name/ID
-- [ ] Scroll to top for mobile
+- [x] Scroll to top for mobile
