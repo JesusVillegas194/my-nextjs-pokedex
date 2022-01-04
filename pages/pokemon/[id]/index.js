@@ -2,6 +2,7 @@ import {
   Box,
   Chip,
   Container,
+  Fab,
   Grid,
   Tab,
   Tabs,
@@ -14,6 +15,8 @@ import { BG_COLORS, TITLE_COLORS, TYPE_COLORS } from "../../../src/colors";
 import PokemonBio from "../../../components/PokemonBio";
 import PokemonStats from "../../../components/PokemonStats";
 import { useState } from "react";
+import ScrollToTop from "../../../components/ScrollToTop";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const pokemonEndPoint = "https://pokeapi.co/api/v2/pokemon/";
 const speciesEndPoint = "https://pokeapi.co/api/v2/pokemon-species/";
@@ -42,8 +45,6 @@ function allyProps(index) {
 }
 
 function Pokemon({ pokemonData, speciesData }) {
-  console.log(pokemonData);
-  console.log(speciesData);
   const {
     abilities,
     base_experience,
@@ -97,7 +98,7 @@ function Pokemon({ pokemonData, speciesData }) {
           spacing={3}
         >
           <Box
-            component="Grid"
+            component={Grid}
             item
             xs={12}
             lg={6}
@@ -221,6 +222,11 @@ function Pokemon({ pokemonData, speciesData }) {
             </Box>
           </Box>
         </Box>
+        <ScrollToTop>
+          <Fab color="primary" size="medium" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollToTop>
       </Container>
     </div>
   );

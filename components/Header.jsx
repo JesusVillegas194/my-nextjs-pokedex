@@ -6,7 +6,7 @@ function Header() {
   return (
     <Box sx={{ flexGrow: 1 }} component="header">
       <AppBar position="static" color="error">
-        <Toolbar>
+        <Toolbar id="back-to-top-anchor">
           <Box component="div" sx={{ flexGrow: 1 }}>
             <Link href="/" passHref>
               <Typography

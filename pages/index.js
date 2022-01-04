@@ -1,4 +1,4 @@
-import { Container, Typography, Box, Grid } from "@mui/material";
+import { Container, Typography, Box, Grid, Fab } from "@mui/material";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Pokemon from "../components/Pokemon";
@@ -6,6 +6,8 @@ import PokemonList from "../components/PokemonList";
 import MyPagination from "../components/MyPagination";
 import { GENERATION_ARRAY } from "../src/utils";
 import GenerationFilter from "../components/GenerationFilter";
+import ScrollToTop from "../components/ScrollToTop";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const defaultEndPoint = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=12";
 const getOffset = (page, genOffset) => page * 12 - 12 + genOffset;
@@ -94,6 +96,11 @@ export default function Home({ data }) {
             })}
           </PokemonList>
         </Box>
+        <ScrollToTop>
+          <Fab color="primary" size="medium" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollToTop>
       </Container>
     </div>
   );
